@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dyknhuvxt/image/upload/c_thumb,w_200,g_face/v1730045604/papercraftr-logo_tqbmdj.png"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EH0253LPK5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-EH0253LPK5");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="StoryCraftr - Your AI-powered Book Creation Assistant"
+    />
+    <title>StoryCraftr - Write Your Story with AI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #333;
+      }
+
+      header {
+        background-color: #e67e22;
+        color: #fff;
+        padding: 1em 0;
+        position: relative;
+      }
+
+      nav {
+        text-align: right;
+        padding-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .release-link {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 0.9em;
+      }
+
+      .release-link a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .release-link a:hover {
+        text-decoration: underline;
+      }
+
+      header img {
+        max-width: 150px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .release-link,
+        nav {
+          position: static; /* Cambia a estático para apilar los elementos */
+          text-align: center; /* Centra los elementos en pantallas pequeñas */
+          margin: 10px 0; /* Añade espacio entre ellos */
+        }
+
+        nav {
+          padding-right: 0; /* Elimina el padding en la derecha */
+        }
+
+        nav a {
+          display: block; /* Haz que los enlaces se muestren uno debajo del otro */
+          margin: 5px 0; /* Espacio entre los enlaces */
+        }
+
+        header img {
+          max-width: 100px; /* Reduce el tamaño del logo en pantallas más pequeñas */
+        }
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.6em;
+      }
+
+      section {
+        padding: 3em 1.5em;
+      }
+
+      .button {
+        background-color: #e67e22;
+        color: white;
+        padding: 0.8em 2em;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 1em;
+        display: inline-block;
+      }
+
+      .button:hover {
+        background-color: #d35400;
+      }
+
+      footer {
+        margin-top: 2em;
+        padding: 2em 0;
+        background-color: #333;
+        color: #fff;
+      }
+
+      footer a {
+        color: #e67e22;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      .coming-soon {
+        background-color: #ffcc00;
+        color: #333;
+        padding: 1em;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 2em;
+        border-radius: 5px;
+      }
+
+      .coming-soon code {
+        display: block;
+        margin-top: 0.5em;
+        padding: 0.5em;
+        background-color: #fff6cc;
+        color: #333;
+        border-radius: 5px;
+        font-family: monospace;
+        word-wrap: break-word; /* Permite que el texto largo se ajuste en varias líneas */
+        white-space: pre-wrap; /* Mantiene los saltos de línea pero permite ajustar el texto */
+        overflow-wrap: break-word; /* Otra opción para asegurar que las palabras largas se ajusten */
+      }
+
+      @media (max-width: 768px) {
+        .coming-soon code {
+          word-break: break-all; /* Rompe palabras largas en pantallas pequeñas si es necesario */
+        }
+      }
+
+      chat-banner {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #4a90e2;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1.2em;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .chat-banner {
+        position: relative; /* Necesario para que el botón se posicione en relación a este contenedor */
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+      }
+
+      .chat-close {
+        position: absolute; /* Permite mover el botón dentro del contenedor */
+        top: 10px; /* Ajusta según necesites */
+        right: 10px; /* Ajusta según necesites */
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .chat-close:hover {
+        color: red; /* Estilo opcional al pasar el mouse */
+      }
+
+      .vscode-logo,
+      .openai-logo,
+      .github-logo {
+        position: absolute;
+        top: 50px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        z-index: 10;
+      }
+
+      .openai-logo {
+        left: 20px;
+        width: 120px; /* Ajuste del ancho del contenedor OpenAI */
+      }
+
+      .github-logo {
+        right: 20px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px; /* Más espacio para el logo y texto */
+      }
+
+      .vscode-logo {
+        top: 120px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px; /* Más espacio para el logo y texto */
+      }
+
+      .openai-logo img {
+        width: 100%; /* El logo de OpenAI ocupa todo el ancho del contenedor */
+        height: auto;
+      }
+
+      .github-logo img {
+        width: 40px; /* Tamaño cuadrado para el logo de GitHub */
+        height: 40px; /* Mismo tamaño de ancho y alto */
+      }
+
+      .vscode-logo img {
+        width: 40px; /* Tamaño cuadrado para el logo de GitHub */
+        height: 40px; /* Mismo tamaño de ancho y alto */
+      }
+
+      .vscode-logo p,
+      .openai-logo p,
+      .github-logo p {
+        margin: 5px 0 0;
+        font-size: 12px;
+        color: #333;
+      }
+
+      .vscode-logo a,
+      .openai-logo a,
+      .github-logo a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .vscode-logo a:hover,
+      .openai-logo a:hover,
+      .github-logo a:hover {
+        color: #4a90e2;
+      }
+
+      @media (max-width: 768px) {
+        .vscode-logo .openai-logo,
+        .github-logo {
+          display: none; /* Ocultar los logos en pantallas más pequeñas */
+        }
+      }
+
+      .chat-link {
+        font-weight: bold;
+        color: #ffffff; /* Bright orange-red color */
+        text-decoration: none;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+        position: relative;
+      }
+
+      .chat-link:hover {
+        color: #ff6347; /* Lighter red on hover */
+        transform: scale(1.1); /* Slightly enlarge the text on hover */
+      }
+
+      .chat-link::after {
+        content: "✨";
+        font-size: 18px;
+        position: absolute;
+        right: -25px;
+        top: 0;
+        opacity: 0;
+        transition:
+          opacity 0.3s ease,
+          right 0.3s ease;
+      }
+
+      .chat-link:hover::after {
+        right: -5px;
+        opacity: 1;
+      }
+
+    .highlight-link {
+        background-color: #e67e22; /* Color de fondo naranja */
+        color: #fff;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .highlight-link:hover {
+        background-color: #d35400; /* Color naranja oscuro al pasar el mouse */
+        transform: scale(1.05); /* Pequeño agrandamiento en hover */
+    }
+</style>
+    </style>
+  </head>
+  <body>
+    <header>
+        <meta
+        name="description"
+        content="PaperCraftr: An AI-powered tool for researchers and students to structure, create, and refine academic papers. Enhance your research writing with AI for citation management, argument development, and structured outlining."
+      />
+      <meta
+        name="keywords"
+        content="AI research tool, academic writing, outline tool, citation management, research paper writing, AI academic assistant, PaperCraftr, research writing, academic writing assistant"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta
+        property="og:title"
+        content="PaperCraftr - Enhance Your Research Writing with AI"
+      />
+      <meta
+        property="og:description"
+        content="PaperCraftr assists researchers in crafting academic papers with AI-powered citation management, argument development, and structured outlining. Discover its features now."
+      />
+      <meta
+        property="og:image"
+        content="https://res.cloudinary.com/dyknhuvxt/image/upload/v1730045604/papercraftr-logo_tqbmdj.png"
+      />
+      <meta
+        property="og:url"
+        content="https://github.com/raestrada/storycraftr"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      
+
+      <div class="release-link">
+        <a
+          href="https://github.com/raestrada/storycraftr/releases/tag/v0.7.0-alpha3"
+          >Release Notes v0.7.0-alpha3</a
+        >
+      </div>
+
+      <nav>
+        <a href="http://storycraftr.app" class="highlight-link">Explore StoryCraftr for Fiction Writing!</a>
+        <a href="getting_started.html">Getting Started</a>
+        <a href="iterate.html">Iterating Your Paper</a>
+        <a href="chat.html" class="chat-link">Chat</a>
+      </nav>
+
+      <img
+        src="https://res.cloudinary.com/dyknhuvxt/image/upload/v1730045604/papercraftr-logo_tqbmdj.png"
+        alt="StoryCraftr Logo"
+      />
+
+      <h1>Welcome to PaperCraftr 📑✨</h1>
+      <p>Craft academic papers with AI assistance</p>
+      <div class="openai-logo">
+        <a href="https://openai.com" target="_blank">
+          <img
+            src="https://global.discourse-cdn.com/openai1/original/3X/3/7/37b0465af49ce945753b8555462012147b0fb27a.svg"
+            alt="OpenAI Logo"
+          />
+          <p>Made with OpenAI</p>
+        </a>
+      </div>
+
+      <div class="github-logo">
+        <a
+          href="https://github.com/raestrada/storycraftr"
+          target="_blank"
+          style="display: flex; align-items: center"
+        >
+          <img
+            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+            alt="GitHub Logo"
+            width="40"
+            height="40"
+          />
+          <p style="margin-left: 10px">View on GitHub</p>
+        </a>
+      </div>
+      <div class="vscode-logo">
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=StoryCraftr.storycraftr"
+          target="_blank"
+          style="display: flex; align-items: center"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/visualstudiocode.svg"
+            alt="VSCode Logo"
+            width="40"
+            height="40"
+          />
+          <p style="margin-left: 10px">Extension</p>
+        </a>
+      </div>
+    </header>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PaperCraftr",
+        "description": "AI-powered tool for academic paper writing, citation management, argument development, and more.",
+        "url": "https://github.com/raestrada/papercraftr",
+        "applicationCategory": "ResearchAssistant"
+    }
+    </script>
+      
+
+    <section>
+        <div class="coming-soon">
+            🚧 Coming Soon - First Release! 🚀
+            <br />Stay tuned for the official launch of PaperCraftr, your AI-powered assistant for academic writing.
+        </div>
+    </section>
+
+    <section>
+        <h2>Why PaperCraftr?</h2>
+        <p>
+            Designed for researchers and students, PaperCraftr supports you in crafting well-structured
+            papers, managing citations 📚, and developing cohesive arguments with ease.
+        </p>
+        <p>
+            Let AI assist with your research and writing process, helping you stay focused on
+            your ideas and results.
+        </p>
+
+        <a href="https://github.com/raestrada/storycraftr" class="button"
+            >Explore the Code on GitHub</a
+        >
+    </section>
+    <section>
+      <div class="chat-banner">
+        <button
+          class="chat-close"
+          onclick="document.querySelector('.chat-banner').style.display='none';"
+        >
+          &times;
+        </button>
+        <h2>
+            💬 Introducing Chat!!! – A Powerful Tool to Enhance Your Research Process! 💥
+          </h2>
+          <p>
+            Whether you're exploring new theories, refining your arguments, or brainstorming
+            ideas, Chat is here to help. It's a straightforward, easy-to-use feature that
+            unlocks new insights and gets your thoughts flowing effortlessly. Try it out
+            and supercharge your research!
+          </p>
+        <img
+          src="https://res.cloudinary.com/dyknhuvxt/image/upload/v1729551304/chat-example_hdo9yu.png"
+          style="max-width: 100%; height: auto; display: block; margin: 0 auto"
+        />
+      </div>
+    </section>
+    <section>
+      <h2>Join Our Community 🚀</h2>
+      <p>
+        PaperCraftr is a collaborative effort, and we need you to help shape the
+        future of research writing! Whether you're a developer, researcher, or simply
+        passionate about academic advancement, you can make a difference.
+      </p>
+      <a
+        href="https://github.com/raestrada/storycraftr/blob/main/CONTRIBUTING.md"
+        class="button"
+        >Contribute Now</a
+      >
+    </section>
+
+    <footer>
+      <p>
+        Follow us on
+        <a href="https://twitter.com/Storycraftrapp">
+          <img
+            src="https://pbs.twimg.com/media/F1zrsq8XsAUU7Lw?format=jpg&name=medium"
+            alt="X logo"
+            style="width: 20px; height: 20px; vertical-align: middle"
+          />
+          for the latest updates
+        </a>
+      </p>
+      <p>
+        Join us on
+        <a
+          href="https://join.slack.com/t/storycraftr/shared_invite/zt-2tafmvgrk-HYNs~cxhlFCnmYOTFRZZTA"
+        >
+          <img
+            src="https://scontent.fscl38-1.fna.fbcdn.net/v/t39.30808-1/449769914_794996782768282_7376581937570946428_n.jpg?stp=dst-jpg_s480x480&_nc_cat=1&ccb=1-7&_nc_sid=f4b9fd&_nc_eui2=AeHjODXAWXyBKX0zb5C_bm1OhhX-bdQFJ_CGFf5t1AUn8FpJUv9V-JqfUB7dnt-WfMo&_nc_ohc=XB4hNHkYOXMQ7kNvgEn_HkE&_nc_zt=24&_nc_ht=scontent.fscl38-1.fna&_nc_gid=A0Gvt4XM7DGLWYHV12fRTPs&oh=00_AYAWyh3RBTG6HdKKgYhaZGT9wDmPuWo62y0K3HmJc0XOBg&oe=671CB275"
+            alt="Slack logo"
+            style="width: 20px; height: 20px; vertical-align: middle"
+          />
+          Slack
+        </a>
+      </p>
+      <p>&copy; 2024 PaperCraftr</p>
+    </footer>
+  </body>
+</html>
