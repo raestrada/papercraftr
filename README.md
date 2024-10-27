@@ -1,4 +1,4 @@
-# [![PaperCraftr Logo](https://res.cloudinary.com/dyknhuvxt/image/upload/v1730045604/papercraftr-logo_tqbmdj.png)](http://papercraftr.app)
+# [![PaperCraftr Logo](https://res.cloudinary.com/dyknhuvxt/image/upload/c_scale,w_100/v1730045604/papercraftr-logo_tqbmdj.png)](http://papercraftr.app)
 
 **PaperCraftr** is an academic writing assistant, designed as part of the **StoryCraftr** project, which is now part of the **AI Craftr Suite**. This tool focuses on assisting researchers, students, and professionals in efficiently organizing, drafting, and refining academic papers with AI support.
 
