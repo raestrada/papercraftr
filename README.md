@@ -17,6 +17,14 @@ PaperCraftr, as part of this suite, specializes in academic paper composition, h
 
 This page is dedicated to **PaperCraftr** and provides resources and documentation for using the academic writing assistant specifically. For more information on the broader AI Craftr Suite and other tools in the collection, please visit the StoryCraftr homepage linked above.
 
+## Powered by AI Craftr
+
+![AI Craftr Logo](https://res.cloudinary.com/dyknhuvxt/image/upload/v1730059761/aicraftr_qzknf4.png)
+
+**PaperCraftr** es parte de la suite **AI Craftr**, un conjunto de herramientas de código abierto diseñadas para asistir en la escritura creativa y académica. AI Craftr potencia la productividad de escritores, investigadores y educadores, proporcionando herramientas avanzadas para la creación de contenido.
+
+Puedes explorar más sobre **AI Craftr** y descubrir otras herramientas como **StoryCraftr** para la escritura académica en [https://aicraftr.app](https://aicraftr.app).
+
 ---
 
 Happy writing and researching with **PaperCraftr**! 📚✨
