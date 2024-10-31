@@ -19,11 +19,12 @@ This page is dedicated to **PaperCraftr** and provides resources and documentati
 
 ## Powered by AI Craftr
 
+**PaperCraftr** is part of the **AI Craftr** suite, an open-source set of tools designed to assist with creative and academic writing. AI Craftr enhances the productivity of writers, researchers, and educators, providing advanced tools for content creation.
+
 ![AI Craftr Logo](https://res.cloudinary.com/dyknhuvxt/image/upload/v1730059761/aicraftr_qzknf4.png)
 
-**PaperCraftr** es parte de la suite **AI Craftr**, un conjunto de herramientas de código abierto diseñadas para asistir en la escritura creativa y académica. AI Craftr potencia la productividad de escritores, investigadores y educadores, proporcionando herramientas avanzadas para la creación de contenido.
+You can learn more about **AI Craftr** and discover other tools like **StoryCraftr** for academic writing at [https://aicraftr.app](https://aicraftr.app).
 
-Puedes explorar más sobre **AI Craftr** y descubrir otras herramientas como **StoryCraftr** para la escritura académica en [https://aicraftr.app](https://aicraftr.app).
 
 ---
 
