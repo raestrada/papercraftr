@@ -95,3 +95,54 @@ papercraftr generate_section custom --order 1 "Theoretical Framework" "Add more 
 ```
 
 The system will recognize the existing section and refine it rather than creating a new one.
+
+## Publishing Options
+
+PaperCraftr provides several advanced options for publishing your papers:
+
+### Custom Templates
+
+You can use custom LaTeX templates for your papers. The default template is IEEE format, but you can create your own:
+
+```bash
+papercraftr publish pdf en --template path/to/your/template.tex
+```
+
+### Translation Support
+
+PaperCraftr supports translation of papers using OpenAI's translation capabilities:
+
+```bash
+papercraftr publish pdf en --translate es
+```
+
+This will translate your paper from English to Spanish before generating the PDF.
+
+### Custom Output Directory
+
+By default, PDFs are saved in the `output` directory. You can specify a custom output directory:
+
+```bash
+papercraftr publish pdf en --output-dir path/to/output
+```
+
+### Custom Sections in PDF
+
+PaperCraftr automatically detects and includes custom sections from the `sections` directory. These sections are appended to the end of your paper in alphabetical order.
+
+To add a custom section:
+
+1. Create a new Markdown file in the `sections` directory
+2. Name it according to your desired order (e.g., `01_custom_section.md`)
+3. The section will be automatically included when you publish your paper
+
+### Troubleshooting
+
+If you encounter issues with PDF generation:
+
+1. **Missing Dependencies**: Ensure Pandoc and pdflatex are installed correctly
+2. **Template Errors**: Check your LaTeX template for syntax errors
+3. **Translation Issues**: Verify your OpenAI API key is set correctly
+4. **Custom Sections**: Ensure your custom sections are properly formatted Markdown
+
+For more detailed information about publishing, see the [Publishing Guide](publish.md).

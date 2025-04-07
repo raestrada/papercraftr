@@ -164,13 +164,63 @@ With a structured outline and literature review, we can now proceed to draft eac
    papercraftr iterate proofread "Check for grammar, clarity, and formatting across the entire paper."
    ```
 
-4. **Generate PDF**:
+## Step 7: Publish Your Paper
 
-   ```
-   papercraftr publish pdf en
-   ```
+PaperCraftr supports publishing your paper to PDF, making it easy to share your work. To generate a PDF, you'll need to have **Pandoc** and **pdflatex** installed on your system.
 
-## Step 7: Chat with Your Assistant
+### Prerequisites
+
+Make sure to install **Pandoc** and **pdflatex** before running the _publish_ command. Here are minimalistic installation instructions:
+
+#### For Ubuntu/Debian:
+```bash
+sudo apt-get update
+sudo apt-get install pandoc texlive-latex-base texlive-latex-extra
+```
+
+#### For macOS:
+```bash
+brew install pandoc
+brew install --cask mactex
+```
+
+#### For Windows:
+1. Download and install [Pandoc](https://pandoc.org/installing.html)
+2. Download and install [MiKTeX](https://miktex.org/download)
+
+Once you have these dependencies installed, you can proceed to publish your paper.
+
+### 1. Generate PDF:
+
+To generate a PDF of your paper in the primary language, use the following command:
+
+```bash
+papercraftr publish pdf en
+```
+
+Where `en` is the primary language of your paper.
+
+### 2. Generate PDF with Translation:
+
+If you want to translate your paper and generate the PDF in another language (e.g., Spanish), you can use the `--translate` option:
+
+```bash
+papercraftr publish pdf en --translate es
+```
+
+### 3. Use a Custom Template:
+
+PaperCraftr comes with a default IEEE template, but you can use your own LaTeX template:
+
+```bash
+papercraftr publish pdf en --template path/to/your/template.tex
+```
+
+Once the process is complete, the PDF file will be available in the `output` directory of your paper project, ready to be shared or submitted to conferences.
+
+For more detailed information about publishing, see the [Publishing Guide](publish.md).
+
+## Step 8: Chat with Your Assistant
 
 PaperCraftr includes a command to chat directly with your AI assistant. This feature allows you to ask questions, refine ideas, or request improvements to your paper's content, all from the terminal.
 
