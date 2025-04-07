@@ -40,6 +40,24 @@ Agent Module
 .. automodule:: storycraftr.agent.worldbuilding
    :members:
 
+.. automodule:: storycraftr.agent.paper.generate_section
+   :members:
+
+.. automodule:: storycraftr.agent.paper.iterate
+   :members:
+
+.. automodule:: storycraftr.agent.paper.outline_sections
+   :members:
+
+.. automodule:: storycraftr.agent.paper.organize_lit
+   :members:
+
+.. automodule:: storycraftr.agent.paper.references
+   :members:
+
+.. automodule:: storycraftr.agent.paper.generate_pdf
+   :members:
+
 Command Module
 --------------
 
@@ -57,6 +75,24 @@ Command Module
    :members:
 
 .. automodule:: storycraftr.cmd.outline
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.generate_section
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.iterate
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.outline_sections
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.organize_lit
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.references
+   :members:
+
+.. automodule:: storycraftr.cmd.paper.generate_pdf
    :members:
 
 .. automodule:: storycraftr.cmd.publish

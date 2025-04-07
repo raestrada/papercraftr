@@ -27,7 +27,7 @@ Once installed and the API key is set, you can run the tool using the command `p
 
 ## Step 2: Create the Behavior File
 
-The **behavior file** is essential to guide the AI’s **writing approach**. It represents the **researcher's perspective** and defines how the AI should approach the paper. This file goes beyond technical details—it sets the tone, style, and focus of the paper, establishing a foundation for the AI to align with your research goals.
+The **behavior file** is essential to guide the AI's **writing approach**. It represents the **researcher's perspective** and defines how the AI should approach the paper. This file goes beyond technical details—it sets the tone, style, and focus of the paper, establishing a foundation for the AI to align with your research goals.
 
 The behavior file acts as a **creative guide** for the AI, helping ensure that all generated content follows your desired **tone**, **methodology**, and **academic style**.
 
@@ -35,7 +35,7 @@ The behavior file acts as a **creative guide** for the AI, helping ensure that a
 
 In the behavior file, you can include various elements to help guide the AI:
 
-- **Research Focus**: What’s the central question or hypothesis?
+- **Research Focus**: What's the central question or hypothesis?
 - **Tone**: Should the writing be formal, technical, concise, etc.?
 - **Methodology**: What approach should the AI follow in presenting data?
 - **Literature Depth**: Does the paper require an extensive review, or is it focused on a narrow contribution?
@@ -120,13 +120,23 @@ With a structured outline and literature review, we can now proceed to draft eac
    papercraftr generate_section methodology "Write the methodology section, detailing the systematic review approach used to analyze studies on AI and cognition."
    ```
 
-3. **Draft Results**:
+3. **Draft Custom Sections** (between Methodology and Results):
+
+   ```
+   papercraftr generate_section custom --order 1 "Theoretical Framework" "Develop a theoretical framework that connects AI models with cognitive processes, focusing on memory and learning mechanisms."
+   ```
+
+   ```
+   papercraftr generate_section custom --order 2 "Data Collection" "Describe the data collection process, including sources, criteria for inclusion/exclusion, and data extraction methods."
+   ```
+
+4. **Draft Results**:
 
    ```
    papercraftr generate_section results "Summarize the findings, focusing on the impact of AI models on cognitive functions like memory and learning."
    ```
 
-4. **Draft Discussion**:
+5. **Draft Discussion**:
 
    ```
    papercraftr generate_section discussion "Discuss the implications of AI in cognitive psychology, including potential applications and future research directions."

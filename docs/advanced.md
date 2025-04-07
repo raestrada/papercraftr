@@ -54,5 +54,44 @@ This command will:
 - **Multiple Prompts**: Enabled by default, but can be turned off for a single-response output.
 - **Backup Files**: Automatically generated with a `.back` extension for every modified file.
 - **Reload Files**: Use `Papercraftr reload-files` to update the assistant's context after making manual changes.
+- **Custom Sections**: Create custom sections between methodology and results with specified order numbers.
 
 These advanced features provide greater control over your workflow and ensure that your project evolves smoothly and consistently.
+
+### Custom Sections
+
+PaperCraftr allows you to create custom sections between the methodology and results sections of your paper. This is useful for papers that require additional sections like theoretical frameworks, data collection details, or specialized analyses.
+
+#### Creating Custom Sections
+
+To create a custom section, use the `custom` command with the `--order` option to specify its position:
+
+```bash
+papercraftr generate_section custom --order 1 "Theoretical Framework" "Develop a theoretical framework that connects AI models with cognitive processes."
+```
+
+The `--order` parameter determines the sequence of custom sections. For example:
+- `--order 1` places the section immediately after methodology
+- `--order 2` places it after the first custom section
+- And so on...
+
+#### File Naming Convention
+
+Custom sections are saved with filenames that include their order number and title:
+
+```
+sections/custom_1_theoretical_framework.md
+sections/custom_2_data_collection.md
+```
+
+This naming convention ensures that sections are processed in the correct order when generating the final PDF.
+
+#### Refining Custom Sections
+
+You can refine custom sections just like any other section:
+
+```bash
+papercraftr generate_section custom --order 1 "Theoretical Framework" "Add more details about the connection between neural networks and memory processes."
+```
+
+The system will recognize the existing section and refine it rather than creating a new one.
